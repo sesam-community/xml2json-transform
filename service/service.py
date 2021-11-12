@@ -1,5 +1,6 @@
 import datetime
 import json
+import os
 import sys
 import xmltodict
 from flask import Flask, request, Response
@@ -15,10 +16,11 @@ required_env_vars = [
     "SOURCE_PROPERTY",  # where the XML resides
     "TARGET_PROPERTY"   # where the transformed JSON will be put
 ]
-optional_env_vars = ["LOG_LEVEL"]
-
+optional_env_vars = ["LOG_LEVEL", "PORT"]
 
 env_vars = VariablesConfig(required_env_vars, optional_env_vars=optional_env_vars)
+
+port = int(os.getenv("PORT", 5000))
 
 # Check that all required env.vars are supplied
 if not env_vars.validate():
@@ -53,17 +55,20 @@ def receiver():
     logger.debug(f'source_property: {source_property}')
     logger.debug(f'target_property: {target_property}')
 
-    entity = request.get_json()
+    entities = request.get_json()
 
-    logger.debug(f'source entity: {entity}')
+    logger.debug(f'source entities: {entities}')
+    logger.debug(f'entities type: {type(entities)}')
 
-    json_data = xml_to_json(entity[source_property])
-    entity[target_property] = json.loads(json_data)
+    for entity in entities:
+        logger.debug(f'entity type: {type(entity)}')
+        json_data = xml_to_json(entity[source_property])
+        entity[target_property] = json.loads(json_data)
 
-    logger.debug(f'result entity: {entity}')
+    logger.debug(f'result entities: {entities}')
 
-    return Response(json.dumps(entity), mimetype='application/json')
+    return Response(json.dumps(entities), mimetype='application/json')
 
 
 if __name__ == "__main__":
-    serve(app)
+    serve(app, port=port)
