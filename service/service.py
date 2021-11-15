@@ -61,9 +61,13 @@ def receiver():
     logger.debug(f'entities type: {type(entities)}')
 
     for entity in entities:
+        logger.info(f'Processing entity: {entity}')
         logger.debug(f'entity type: {type(entity)}')
+
         json_data = xml_to_json(entity[source_property])
         entity[target_property] = json.loads(json_data)
+
+        logger.info('Done.')
 
     logger.debug(f'result entities: {entities}')
 
