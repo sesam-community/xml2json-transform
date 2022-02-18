@@ -4,10 +4,6 @@
 
 Transform string formatted XML into JSON.
 
-## Docker image
-
-https://hub.docker.com/repository/docker/gamh/xml2json-transform/
-
 ## Endpoint
 
 `http://localhost:5000/transform`.
@@ -39,7 +35,7 @@ https://hub.docker.com/repository/docker/gamh/xml2json-transform/
       "SOURCE_PROPERTY": "xml-string",
       "TARGET_PROERTY": "json-result"
     },
-    "image": "gamh/xml2json-transform:<version>",
+    "image": "sesamcommunity/xml2json-transform:<version>",
     "port": 5001
   }
 }
