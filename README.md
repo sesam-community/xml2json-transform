@@ -33,7 +33,7 @@ Transform string formatted XML into JSON.
       "SOURCE_PROPERTY": "xml-string",
       "TARGET_PROERTY": "json-result"
     },
-    "image": "gamh/xml2json-transform:<version>",
+    "image": "sesamcommunity/xml2json-transform:<version>",
     "port": 5001
   }
 }
