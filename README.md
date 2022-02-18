@@ -2,10 +2,6 @@
 
 Transform string formatted XML into JSON.
 
-## Docker image
-
-https://hub.docker.com/repository/docker/gamh/xml2json-transform/
-
 ## Endpoint
 
 `http://localhost:5000/transform`.
