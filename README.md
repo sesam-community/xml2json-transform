@@ -1,4 +1,4 @@
-[![SesamCommunity CI&CD](https://github.com/sesam-community/xml2json-transoform/actions/workflows/sesam-community-ci-cd.yml/badge.svg)](https://github.com/sesam-community/xml2json-transoform/actions/workflows/sesam-community-ci-cd.yml)
+[![SesamCommunity CI&CD](https://github.com/sesam-community/xml2json-transform/actions/workflows/sesam-community-ci-cd.yml/badge.svg)](https://github.com/sesam-community/xml2json-transform/actions/workflows/sesam-community-ci-cd.yml)
 
 # xml2json-transform
 
