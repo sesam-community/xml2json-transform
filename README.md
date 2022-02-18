@@ -1,3 +1,5 @@
+[![SesamCommunity CI&CD](https://github.com/sesam-community/xml2json-transoform/actions/workflows/sesam-community-ci-cd.yml/badge.svg)](https://github.com/sesam-community/xml2json-transoform/actions/workflows/sesam-community-ci-cd.yml)
+
 # xml2json-transform
 
 Transform string formatted XML into JSON.
